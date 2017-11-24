@@ -2,8 +2,19 @@
 @section('content')
 
     <h2>Edit Monster</h2>
+
     <div class="row">
-      <div class="col-4"></div>
+      <div class="col-4">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+      </div>
       <div class="col-4">
         @if (session('status'))
             <div class="alert alert-success">

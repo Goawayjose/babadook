@@ -2,6 +2,18 @@
 @section('content')
 
 <h2>Create Monster</h2>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
     <div class="col-4"></div>
     <div class="col-4">
       <form class="" action="/monsters" method="POST" enctype="multipart/form-data">

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Monster;
 
+use App\Http\requests\monsterStore;
+use App\Http\requests\MonsterUpdate;
+
 use Image;
 
 class MonsterController extends Controller
@@ -36,7 +39,7 @@ class MonsterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(monsterStore $request)
     {
       $monster = new Monster;
       $monster->name = $request -> input('name');
@@ -87,7 +90,7 @@ class MonsterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(monsterUpdate $request, $id)
     {
       $monster = Monster::find($id);
       $monster->name = $request -> input('name');

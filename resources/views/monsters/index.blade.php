@@ -13,7 +13,7 @@
       @foreach ($monsters as $monster)
         <div class="col-4 float-left">
           <div class="card">
-            <img class="card-img-top" src="{{ $monster -> image }}" alt="Card image cap">
+            <img class="card-img-top" src="{{ asset($monster->image) }}" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">{{ $monster -> name }}</h4>
               <ul class="list-group list-group-flush">
